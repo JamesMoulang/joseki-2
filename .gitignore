@@ -1,0 +1,6 @@
+node_modules
+dist/Archive.zip
+dist/main.js
+you-can-kana/out
+you-can-kana/node_modules
+you-can-kana/src/node_modules

@@ -1,0 +1,24 @@
+{
+  "name": "joseki",
+  "version": "1.0.0",
+  "description": "An HTML5 game library mainly for my own purposes, so I'm not reinventing the wheel every time I start a new game that needs direct control over the canvas rendering.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesMoulang/joseki.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesMoulang/joseki/issues"
+  },
+  "homepage": "https://github.com/JamesMoulang/joseki#readme",
+  "dependencies": {
+    "howler": "^2.0.9",
+    "uid": "0.0.2",
+    "underscore": "^1.8.3"
+  }
+}

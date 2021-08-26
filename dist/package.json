@@ -1,0 +1,11 @@
+{
+  "name": "kana",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^6.0.7"
+  }
+}

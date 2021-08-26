@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>joseki engine 2</title>
+  <style>
+    html, body, #root {
+      width:  100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background-color: #21252D;
+    }
+
+    #loading, #smile {
+      color: #F4F4F4;
+      font-size: 64px;
+      font-family: 'Roboto Mono', monospace;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- <canvas id="canvas" style="display: block; position: absolute; z-index: 1" width="100" height="100"></canvas> -->
+  <h1 id='loading'>L O A D I N G</h1>
+  <h1 id='smile'></h1>
+  <script>
+    let smiley = -1;
+    let loading = document.getElementById('smile');
+    const update = () => {
+      smiley++;
+      if (smiley > 3) smiley = -1;
+      loading.innerHTML = smiley == -1 ? '' : (':^)'.substr(0, smiley));
+
+      if (!window.josekiLoaded) setTimeout(update, 500);
+    };
+
+    update();
+  </script>
+  <div id="root"/>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KANA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <style>
+  	html, body, #root {
+  		width:  100%;
+    	height: 100%;
+  		margin: 0;
+  		overflow: hidden;
+      background-color: #21252D;
+  	}
+
+    #loading, #smile {
+      color: #F4F4F4;
+      font-size: 64px;
+      font-family: 'Roboto';
+      text-align: center;
+      vertical-align: middle;
+      line-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- <canvas id="canvas" style="display: block; position: absolute; z-index: 1" width="100" height="100"></canvas> -->
+  <h1 id='loading'>L O A D I N G !</h1>
+  <h1 id='smile'></h1>
+  <script>
+    let smiley = -1;
+    let loading = document.getElementById('smile');
+    const update = () => {
+      smiley++;
+      if (smiley > 3) smiley = -1;
+      loading.innerHTML = smiley == -1 ? '' : (':^)'.substr(0, smiley));
+
+      if (!window.josekiLoaded) setTimeout(update, 500);
+    };
+
+    update();
+  </script>
+  <div id="root"/>
+  <!-- <script type="text/javascript" src="/dist/pace/pace.min.js"/>
+  <link rel="stylesheet" href="/dist/pace/pace-theme-flash.css"/> -->
+  <script type="text/javascript" src="/dist/bundle.js"></script>
+</body>
+</html>
