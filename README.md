@@ -1,4 +1,4 @@
-# Kana
+# joseki starter project
 
 download
 
