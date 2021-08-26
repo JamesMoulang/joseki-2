@@ -81,8 +81,45 @@ class Vector {
 
 	//Only works with 2d vectors.
 	angleTo(v2) {
-		return Math.atan2(v2.y - this.y, v2.x - this.x);
+		const r = Math.acos(this.x * v2.x + this.y * v2.y) / (Math.sqrt(this.x * this.x + this.y * this.y) * Math.sqrt(v2.x * v2.x + v2.y * v2.y));
+		if (this.y * v2.x > this.x * v2.y) {
+			return -r;
+		} else {
+			return r;
+		}
 	}
+
+	rotateTowards(target, speed, game) {
+		const normalised = this.normalised();
+		const target_normalised = target.normalised();
+
+		const currentAngle = new Vector(0, -1).angleTo(normalised);
+		const targetAngle = new Vector(0, -1).angleTo(target_normalised);
+
+		if (game) {
+			game.debug('current: ' + Math.round(Maths.rad2Deg(currentAngle)));
+			game.debug('target:  ' + Math.round(Maths.rad2Deg(targetAngle)));
+		}
+
+		const angleTo = normalised.angleTo(target.normalised());
+		if (game) game.debug('angleTo: ' + Math.round(Maths.rad2Deg(angleTo)));
+
+		let new_angle;
+		if (speed > Math.abs(angleTo)) {
+			new_angle = targetAngle;
+		} else {
+			if (angleTo > 0) {
+				new_angle = currentAngle + speed;
+			} else {
+				new_angle = currentAngle - speed;
+			}
+			
+		}
+		
+		if (game) game.debug('new_angle: ' + Math.round(Maths.rad2Deg(new_angle)));
+
+		return Vector.Heading(new_angle - Math.PI * 0.5, 1);
+	} 
 
 	add(v2) {
 		return new Vector(this.x + v2.x, this.y + v2.y, this.z + v2.z);

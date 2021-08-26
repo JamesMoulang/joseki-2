@@ -17,7 +17,7 @@ class JosekiGame extends Game {
 		// this.isDemo = true;
 		
 		this.ignoreKeyShortcuts = true;
-		this.hideAllDebug = true;
+		// this.hideAllDebug = true;
 		
 		this.skipStateKey = 'test';
 		// this.showSteamID = true;

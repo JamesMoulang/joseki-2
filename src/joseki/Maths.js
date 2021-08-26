@@ -43,9 +43,17 @@ class Maths {
 		}
 
 		if (clockwise) {
-			return amount;
+			if (angle + amount >= target) {
+				return target - angle;
+			} else {
+				return amount;
+			}
 		} else {
-			return -amount;
+			if (angle - amount <= target) {
+				return angle - target;
+			} else {
+				return -amount;
+			}
 		}
 	}
 

@@ -19,7 +19,8 @@
     "howler": "^2.1.1",
     "simplex-noise": "^2.4.0",
     "uid": "0.0.2",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "victor": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

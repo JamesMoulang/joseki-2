@@ -573,7 +573,7 @@ class Game {
 			this.debug('key shortcuts active');
 		}
 
-		this.debug('save type: ' + this.saveLoadType);
+		// this.debug('save type: ' + this.saveLoadType);
 	}
 
 	update() {

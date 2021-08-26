@@ -36,6 +36,10 @@ class Preload extends State {
 
 		this.game.hintCanvas = this.game.createCanvas('hint');
 		this.game.hintCanvas.transparent = true;
+
+		this.game.debugCanvas = this.game.createCanvas('debug');
+		this.game.debugCanvas.transparent = true;
+		this.game.initDebug('debug');
 	}
 
 	initialiseGroups() {
