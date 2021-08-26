@@ -81,7 +81,8 @@ class Vector {
 
 	//Only works with 2d vectors.
 	angleTo(v2) {
-		const r = Math.acos(this.x * v2.x + this.y * v2.y) / (Math.sqrt(this.x * this.x + this.y * this.y) * Math.sqrt(v2.x * v2.x + v2.y * v2.y));
+		const r = Math.acos(Maths.clamp(this.x * v2.x + this.y * v2.y, -1, 1)) / (Math.sqrt(this.x * this.x + this.y * this.y) * Math.sqrt(v2.x * v2.x + v2.y * v2.y));
+		console.log(Math.acos(this.x * v2.x + this.y * v2.y), (Math.sqrt(this.x * this.x + this.y * this.y) * Math.sqrt(v2.x * v2.x + v2.y * v2.y)), this.x, this.y, v2.x, v2.y);
 		if (this.y * v2.x > this.x * v2.y) {
 			return -r;
 		} else {
